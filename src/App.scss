@@ -1,0 +1,23 @@
+@font-face {
+  font-family: aspire;
+  src: url('./assets/fonts/Aspire-DemiBold.ttf');
+}
+
+.app {
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: aspire, sans-serif;
+  font-size: 4rem;
+  text-align: center;
+  margin-top: 1rem;;
+}
+
+#btn-add {
+  width: 10rem;
+  height: 2rem;
+  background-color: coral;
+  margin: 1rem 0;
+}

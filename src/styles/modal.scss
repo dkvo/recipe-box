@@ -1,0 +1,91 @@
+.modal {
+    display:none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+.modal-content {
+    position: relative;
+    width: 50rem;
+    max-width: 70rem;
+    height: auto;
+    top: 15rem;
+    margin: -3rem auto 0 auto;
+    z-index: 1;
+    background-color: rgb(196, 130, 107);
+    box-shadow: 0.5rem 0.5rem 2rem 0.2rem rgba(68,68,68, 0.5);
+}
+
+input, textarea {
+    width: 100%;
+    height: auto;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    box-sizing: border-box;
+    overflow: auto;
+    font-size: 1rem;
+    border: 0;
+    padding-left: 1rem;
+}
+
+form {
+    width: 100%;
+}
+
+label {
+    font-size: 1.5rem;
+}
+hr {
+    margin-top: -2rem;
+    margin-bottom: 1rem;
+}
+
+.form-group {
+    width: 90%;
+    max-width: 90%;
+    display: block;
+    margin: auto;
+}
+
+.recipe-container, .modal-content, input, textarea, button {
+    border-radius: 0.5rem;
+}
+
+#btn-submit, #btn-close {
+    width: 6rem;
+    float: right;
+    margin-right: 1rem;
+}
+
+#second-hr {
+    margin-top: 1rem;
+}
+
+.close {
+    float: right;
+    margin-right: 1rem;
+    font-weight: bold;
+    font-size: 2rem;
+    color:black;
+}
+
+.close:hover {
+    color: red;
+}
+
+span.clear { 
+    clear: both; 
+    display: block; 
+}
+
+.btn-group {
+    display: inline;
+}
+
+#modal-header {
+    margin-left: 3rem;
+}
+
