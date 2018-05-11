@@ -22,7 +22,7 @@ class Modal extends React.Component {
         return (
             <div className="modal">
                 <div className="modal-content">
-                    <span><div className="close">&times;</div></span>
+                    <span><div className="close" onClick={this.handleClick}>&times;</div></span>
                     <h1 ID="modal-header">Recipe and Ingredients</h1>
                     <hr/>
                     <form onSubmit={this.handle}>
