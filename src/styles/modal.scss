@@ -1,5 +1,4 @@
 .modal {
-    display:none;
     position: fixed;
     top: 0;
     right: 0;
@@ -12,9 +11,10 @@
     width: 50rem;
     max-width: 70rem;
     height: auto;
-    top: 15rem;
-    margin: -3rem auto 0 auto;
+    top: -25rem;
+    margin: 0 auto;
     z-index: 1;
+    animation: slidedown 1s forwards;
     background-color: rgb(196, 130, 107);
     box-shadow: 0.5rem 0.5rem 2rem 0.2rem rgba(68,68,68, 0.5);
 }
@@ -89,3 +89,11 @@ span.clear {
     margin-left: 3rem;
 }
 
+@keyframes slidedown {
+    from {
+        top: -25rem;
+    }
+    to {
+        top: 10rem;
+    }
+}

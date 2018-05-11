@@ -1,6 +1,23 @@
 import React from 'react';
 import './../styles/modal.css'
 class Modal extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state= {
+            recipe: {
+                name: '',
+                ingredients: []   
+            }
+        };
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        this.props.closeModal();
+    }
+
+
+
     render() {
         return (
             <div className="modal">
@@ -8,7 +25,7 @@ class Modal extends React.Component {
                     <span><div className="close">&times;</div></span>
                     <h1 ID="modal-header">Recipe and Ingredients</h1>
                     <hr/>
-                    <form action="">
+                    <form onSubmit={this.handle}>
                         <div className="form-group">
                             <label><strong>Recipe Name</strong></label>
                             <input type="text" placeHolder="Enter recipe name"/>
@@ -19,7 +36,7 @@ class Modal extends React.Component {
                         </div>
                         <hr ID="second-hr"/>
                         <div className="btn-group">
-                            <input type="button" value="close" ID="btn-close"/>
+                            <input type="button" value="close" ID="btn-close" onClick={this.handleClick}/>
                             <input type="submit" value="Add" ID="btn-submit"/>
                         </div>
                         <span class="clear"></span>
