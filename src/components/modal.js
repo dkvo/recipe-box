@@ -10,10 +10,21 @@ class Modal extends React.Component {
             }
         };
         this.handleClick = this.handleClick.bind(this);
+        this.setRecipe = this.setRecipe.bind(this);
     }
 
     handleClick() {
         this.props.closeModal();
+    }
+    setRecipe(event) {
+        var recipe = {...this.state.recipe};
+        recipe.name = event.target.recipeName.value;
+        recipe.ingredients = event.target.ingredients.value.split(",");
+        event.preventDefault();
+        this.setState({recipe}, function() {
+            this.props.addRecipe(this.state.recipe);
+            this.props.closeModal();
+        });
     }
 
 
@@ -25,14 +36,14 @@ class Modal extends React.Component {
                     <span><div className="close" onClick={this.handleClick}>&times;</div></span>
                     <h1 ID="modal-header">Recipe and Ingredients</h1>
                     <hr/>
-                    <form onSubmit={this.handle}>
+                    <form onSubmit={this.setRecipe}>
                         <div className="form-group">
                             <label><strong>Recipe Name</strong></label>
-                            <input type="text" placeHolder="Enter recipe name"/>
+                            <input type="text" placeHolder="Enter recipe name" name="recipeName" required/>
                         </div>   
                         <div className="form-group">
                             <label><strong>Ingredients</strong></label>
-                            <textarea type="text" placeHolder="Enter ingredients, separated, by commas" data-gramm_editor="false"/>
+                            <textarea type="text" placeHolder="Enter ingredients, separated, by commas" name="ingredients" data-gramm_editor="false" required/>
                         </div>
                         <hr ID="second-hr"/>
                         <div className="btn-group">
