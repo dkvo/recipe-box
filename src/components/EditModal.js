@@ -4,6 +4,7 @@ class EditModal extends React.Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
+        this.update = this.update.bind(this);
     }
     handleClick() {
         this.props.closeModal();
@@ -11,6 +12,14 @@ class EditModal extends React.Component {
 
     update(event) {
         event.preventDefault();
+        let recipe = {
+            name: '',
+            ingredients: []
+        };
+        recipe.name = event.target.recipeName.value;
+        recipe.ingredients = event.target.ingredients.value.split(",");
+        this.props.updateRecipe(recipe, this.props.recipe);
+        this.props.closeModal();
     }
     render() {
         let ingredients = this.props.ingredients.join(',');

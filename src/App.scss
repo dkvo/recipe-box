@@ -7,7 +7,7 @@ $font: aspire;
 }
 
 .app {
-  max-width: 70%;
+  max-width: 60%;
   margin: 0 auto;
 }
 
@@ -20,7 +20,8 @@ h1 {
 
 #btn-add {
   width: 10rem;
-  height: 2rem;
+  height: 3rem;
   background-color: $color-coral;
   margin: 1rem 0;
+  font-size: 1.5rem;
 }

@@ -11,10 +11,11 @@ class CollapsibleItem extends React.Component {
         this.toggleIngerdients = this.toggleIngerdients.bind(this);
         this.removeData = this.removeData.bind(this);
         this.handleClick = this.handleClick.bind(this);
+        this.update = this.update.bind(this);
     }
 
     toggleIngerdients() {
-        this.props.collapse(this.props.recipe);
+        this.props.collapse(this.props.recipe, this.props.toggle);
     }
 
     removeData() {
@@ -25,6 +26,10 @@ class CollapsibleItem extends React.Component {
         this.setState(prevState => ({
             isEdit: !prevState.isEdit
           }));
+    }
+
+    update(newObj, oldName) {
+        this.props.updateRecipe(newObj, oldName);
     }
 
     render() {
@@ -46,7 +51,7 @@ class CollapsibleItem extends React.Component {
                     <h5 onClick={this.toggleIngerdients}>{this.props.recipe}</h5>
                </div>
                {ingredients}
-               {this.state.isEdit ? <EditModal closeModal={this.handleClick} recipe={this.props.recipe} ingredients={this.props.ingredients}/> : null}
+               {this.state.isEdit ? <EditModal closeModal={this.handleClick} recipe={this.props.recipe} ingredients={this.props.ingredients} updateRecipe={this.update}/> : null}
             </div>
         );
     }

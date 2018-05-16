@@ -47,7 +47,7 @@ class Modal extends React.Component {
                         </div>
                         <hr ID="second-hr"/>
                         <div className="btn-group">
-                            <input type="button" value="close" ID="btn-close" onClick={this.handleClick}/>
+                            <input type="button" value="Close" ID="btn-close" onClick={this.handleClick}/>
                             <input type="submit" value="Add" ID="btn-submit"/>
                         </div>
                         <span class="clear"></span>

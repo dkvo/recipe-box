@@ -1,15 +1,21 @@
 $color-coral: coral;
 $color-black: black;
+
 .recipe {
     width: 100%;
-    margin-top: -2rem;
+    margin-top: -1.5rem;
     background-color:coral;
+}
+
+.recipe:first-child {
+    margin-top: -2rem;
+}
+.recipe:last-child {
+    margin-bottom: -2rem;
 }
 .recipe-name {
     background-color: $color-coral;
     width: 100%;
-    height: auto;
-    margin: 0 auto;
 }
 h5 {
     padding: 0.5rem 1rem;
@@ -27,7 +33,6 @@ h5:hover {
 }
 .ingredients {
     width: 100%;
-    margin: 0 auto;
 }
 ul {
     margin-bottom: 1rem;

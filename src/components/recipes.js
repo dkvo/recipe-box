@@ -6,29 +6,38 @@ class Recipes extends React.Component {
         super(props);
         this.removeData = this.removeData.bind(this);
         this.collapse = this.collapse.bind(this);
+        this.update = this.update.bind(this);
         this.state = {
-            recipeName:''
+            recipeName:'',
+            toggle: false
         }
     }
     removeData(name) {
         this.props.remove(name);
     }
-    collapse(name) {
+    collapse(name, isToggle) {
        this.setState(prevState => ({
-           recipeName: name
+           recipeName: name,
+           toggle: isToggle
        }));
+    }
+
+    update(newObj, oldName) {
+        this.props.updateRecipe(newObj, oldName);
     }
 
     render() {
         const collapsible = this.props.recipes.map((recipe) => {
             var toggle = false;
-            if(this.state.recipeName === recipe.name)
+            if(this.state.recipeName === recipe.name && this.state.toggle !== true)
                 toggle = true;
-           return <CollapsibleItem recipe={recipe.name} ingredients={recipe.ingredients} remove={this.removeData} collapse={this.collapse} toggle={toggle}/>;
+           return <CollapsibleItem recipe={recipe.name} ingredients={recipe.ingredients} remove={this.removeData} collapse={this.collapse} toggle={toggle} updateRecipe={this.update}/>;
         })
         return (
             <div className="recipe-container">
-                {collapsible}
+                <div className="collapsible-container">
+                    {collapsible}
+                </div>
             </div>
         )
     }
