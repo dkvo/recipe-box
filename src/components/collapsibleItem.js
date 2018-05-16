@@ -42,8 +42,10 @@ class CollapsibleItem extends React.Component {
         <ul>
             {list}
         </ul>
-        <input type="button" value="Delete" ID="delete-btn" onClick={this.removeData}/>
-        <input type="button" value="Edit" ID="show-edit-btn" onClick={this.handleClick}/>
+        <div className="btn-group">
+            <input type="button" value="Delete" ID="delete-btn" onClick={this.removeData}/>
+            <input type="button" value="Edit" ID="show-edit-btn" onClick={this.handleClick}/>
+        </div>
         </div>) : null;
         return (
             <div className="recipe">

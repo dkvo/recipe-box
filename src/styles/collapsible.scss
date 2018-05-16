@@ -35,7 +35,8 @@ h5:hover {
     width: 100%;
 }
 ul {
-    margin-bottom: 1rem;
+    width: 97%;
+    margin: 0 auto;
     padding: 0;
     list-style: none;
     box-sizing: border-box;
@@ -43,7 +44,6 @@ ul {
 }
 
 li {
-    width: 97%;
     border: thin solid #EEEEEE;
     padding: 0.5rem 0.5rem;
     font-size: 1rem;
@@ -52,5 +52,12 @@ li {
 
 #delete-btn, #show-edit-btn {
     width: 6rem;
+    height: 2rem;;
     margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+.btn-group {
+    width:100%;
+    
 }
